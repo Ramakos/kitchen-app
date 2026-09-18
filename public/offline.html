@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Offline — Ramakos Catering Service</title>
+  <meta name="theme-color" content="#CA251F">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #FFFFFF;
+      color: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .card {
+      max-width: 420px;
+      width: 100%;
+      background: #FFFFFF;
+      border: 1px solid #F0E0E0;
+      border-radius: 1rem;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 10px 30px -10px rgba(202, 37, 31, 0.12);
+    }
+    .logo {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 1.5rem;
+      object-fit: contain;
+    }
+    h1 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    p {
+      font-size: 0.9375rem;
+      color: #666666;
+      line-height: 1.5;
+      margin-bottom: 1.75rem;
+    }
+    .badge {
+      display: inline-block;
+      background-color: #FEF2F2;
+      color: #CA251F;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .btn {
+      display: inline-block;
+      width: 100%;
+      background: linear-gradient(135deg, #CA251F, #9B1C17);
+      color: #FFFFFF;
+      border: none;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border-radius: 0.625rem;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(202, 37, 31, 0.35);
+      transition: opacity 0.2s ease;
+    }
+    .btn:hover { opacity: 0.92; }
+    .btn:active { transform: scale(0.99); }
+    .footer {
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      color: #999999;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="/favicon.png" alt="Ramakos Logo" class="logo" onerror="this.style.display='none'">
+    <span class="badge">No Internet Connection</span>
+    <h1>You are currently offline</h1>
+    <p>Please check your network connection. Any cached data is still preserved in your application.</p>
+    <button class="btn" onclick="window.location.reload()">Retry Connection</button>
+    <div class="footer">Ramakos Catering Service — Good Food, Good Taste</div>
+  </div>
+</body>
+</html>
