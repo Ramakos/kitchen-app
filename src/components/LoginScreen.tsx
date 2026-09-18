@@ -3,6 +3,8 @@ import { LogIn, Delete } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { useToast } from './Toast';
 
+import ramakosLogoFull from '../assets/ramakos-logo-full.png';
+
 type LoginScreenProps = {
   onLogin: (staffId: string, staffName: string) => void;
 };
@@ -68,13 +70,16 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
 
       <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden animate-scale-in">
         {/* Header band */}
-        <div className="bg-gradient-brand px-8 pt-8 pb-10 text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full mb-4 shadow-lg">
-            <LogIn className="w-10 h-10 text-brand" />
+        <div className="bg-gradient-brand px-8 pt-7 pb-8 text-center">
+          <div className="inline-block bg-white rounded-xl p-2.5 mb-3 shadow-md max-w-[220px]">
+            <img
+              src={ramakosLogoFull}
+              alt="Ramakos Catering Service"
+              className="h-14 w-auto mx-auto object-contain"
+            />
           </div>
-          <h1 className="text-3xl font-bold text-white tracking-tight">Ramakos Kitchen</h1>
-          <p className="text-white/80 text-sm mt-1 font-medium">Catering Service — Kumasi Branch</p>
-          <p className="text-white/60 text-xs mt-2">Enter your PIN to continue</p>
+          <h1 className="text-2xl font-bold text-white tracking-tight">Kitchen Display</h1>
+          <p className="text-white/80 text-xs mt-1">Enter your 4-digit PIN to continue</p>
         </div>
 
         <div className="p-8">

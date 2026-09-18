@@ -5,6 +5,7 @@ import { OrderCard } from './OrderCard';
 import { EndOfDayModal } from './EndOfDayModal';
 import { ShortageModal } from './ShortageModal';
 import { useToast } from './Toast';
+import ramakosLogo from '../assets/ramakos-logo.png';
 
 type KitchenDashboardProps = {
   staffId: string;
@@ -237,10 +238,12 @@ export function KitchenDashboard({ staffId, staffName, onLogout }: KitchenDashbo
       <header className="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-40">
         <div className="px-6 py-3">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="w-11 h-11 bg-gradient-brand rounded-xl flex items-center justify-center shadow-brand flex-shrink-0">
-                <Flame className="w-6 h-6 text-white" />
-              </div>
+            <div className="flex items-center gap-3">
+              <img
+                src={ramakosLogo}
+                alt="Ramakos Mascot"
+                className="h-11 w-auto object-contain shrink-0 drop-shadow-sm"
+              />
               <div>
                 <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Kitchen Display</h1>
                 <p className="text-xs text-slate-500 mt-0.5">{currentDate} · {currentTime}</p>
