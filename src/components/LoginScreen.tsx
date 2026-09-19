@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LogIn, Delete } from 'lucide-react';
+import { Delete } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { useToast } from './Toast';
 

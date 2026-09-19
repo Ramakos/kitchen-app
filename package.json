@@ -1,5 +1,7 @@
 {
   "name": "ramakos-kitchen-app",
+  "description": "Ramakos Catering Service — Kitchen Display System (KDS)",
+  "author": "Ramakos Catering Service",
   "private": true,
   "version": "0.0.0",
   "type": "module",
