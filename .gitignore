@@ -20,11 +20,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Environment variables
 .env
-
-.vercel
-
+.env.*
+!.env.example
 .env.local
-.bolt
 
 .vercel
