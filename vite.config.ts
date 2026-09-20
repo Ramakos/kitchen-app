@@ -40,7 +40,8 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp}'],
-        navigateFallback: '/offline.html',
+        navigateFallback: '/index.html',
+        navigateFallbackDenylist: [/^\/api/, /^\/assets/, /^\/.*\.[a-zA-Z0-9]+$/],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/.*\.supabase\.co\/.*/i,
