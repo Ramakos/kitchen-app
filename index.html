@@ -11,7 +11,8 @@
     <meta name="theme-color" content="#CA251F" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Ramakos Kitchen" />
+    <meta name="apple-mobile-web-app-title" content="Ramakos KDS" />
+    <meta name="application-name" content="Ramakos KDS" />
     <link rel="canonical" href="/" />
     <meta property="og:title" content="Ramakos Kitchen Display — Catering Service" />
     <meta property="og:description" content="Ramakos Catering Service Kitchen Display System (KDS) for live ticket routing and preparation." />
@@ -21,9 +22,107 @@
     <meta name="twitter:title" content="Ramakos Kitchen Display — Catering Service" />
     <meta name="twitter:description" content="Ramakos Catering Service Kitchen Display System (KDS) for live ticket routing and preparation." />
     <meta name="twitter:image" content="/ramakos-logo-full.png" />
+    <style>
+      /* PWA Launcher Screen — Instant Native Startup */
+      .pwa-launcher {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+        color: #1a1a1a;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        padding: calc(1.5rem + env(safe-area-inset-top, 0px)) calc(1.5rem + env(safe-area-inset-right, 0px)) calc(1.5rem + env(safe-area-inset-bottom, 0px)) calc(1.5rem + env(safe-area-inset-left, 0px));
+        z-index: 999999;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      .pwa-launcher-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 320px;
+        width: 100%;
+        animation: pwaFadeIn 0.35s ease-out;
+      }
+      .pwa-launcher-logo {
+        width: 210px;
+        height: auto;
+        max-height: 135px;
+        object-fit: contain;
+        margin-bottom: 1.25rem;
+      }
+      .pwa-launcher-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.35rem 0.95rem;
+        border-radius: 9999px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 1.75rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      }
+      .pwa-badge-kitchen { background-color: #FEF2F2; color: #CA251F; border: 1px solid #FCA5A5; }
+      .pwa-launcher-pulse {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 1.75rem;
+      }
+      .pwa-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #CA251F;
+        border-radius: 50%;
+        display: inline-block;
+        animation: pwaBounce 1.4s infinite ease-in-out both;
+      }
+      .pwa-dot:nth-child(1) { animation-delay: -0.32s; }
+      .pwa-dot:nth-child(2) { animation-delay: -0.16s; }
+      .pwa-launcher-footer {
+        font-size: 0.75rem;
+        color: #64748B;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+      @keyframes pwaBounce {
+        0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+        40% { transform: scale(1); opacity: 1; }
+      }
+      @keyframes pwaFadeIn {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @media (prefers-color-scheme: dark) {
+        .pwa-launcher { background-color: #0f1115; color: #f1f5f9; }
+        .pwa-badge-kitchen { background-color: #2a1211; color: #F87171; border-color: #7f1d1d; }
+        .pwa-launcher-footer { color: #94a3b8; }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div id="pwa-launcher" class="pwa-launcher" aria-label="Loading Kitchen Display">
+        <div class="pwa-launcher-card">
+          <div class="pwa-launcher-logo-wrap">
+            <img src="/ramakos-logo-full.png" alt="Ramakos Catering Service" class="pwa-launcher-logo" width="220" height="145" />
+          </div>
+          <div class="pwa-launcher-badge pwa-badge-kitchen">Kitchen Display System</div>
+          <div class="pwa-launcher-pulse" aria-hidden="true">
+            <span class="pwa-dot"></span>
+            <span class="pwa-dot"></span>
+            <span class="pwa-dot"></span>
+          </div>
+          <div class="pwa-launcher-footer">Good Food, Good Taste &bull; Kumasi</div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

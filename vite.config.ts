@@ -8,10 +8,10 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.png', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'offline.html'],
+      includeAssets: ['favicon.png', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'offline.html', 'ramakos-logo-full.png'],
       manifest: {
         name: 'Ramakos Kitchen Display',
-        short_name: 'Kitchen',
+        short_name: 'Ramakos KDS',
         description: 'Ramakos Catering Service — Kitchen Display System (KDS)',
         theme_color: '#CA251F',
         background_color: '#ffffff',
@@ -19,6 +19,7 @@ export default defineConfig({
         orientation: 'any',
         scope: '/',
         start_url: '/',
+        categories: ['food', 'productivity', 'business'],
         icons: [
           {
             src: '/icon-192.png',
@@ -35,6 +36,22 @@ export default defineConfig({
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable'
+          }
+        ],
+        shortcuts: [
+          {
+            name: 'Active Tickets',
+            short_name: 'Tickets',
+            description: 'View active orders in the kitchen',
+            url: '/',
+            icons: [{ src: '/icon-192.png', sizes: '192x192' }]
+          },
+          {
+            name: 'Completed Orders',
+            short_name: 'Completed',
+            description: 'View fulfilled kitchen tickets',
+            url: '/?tab=completed',
+            icons: [{ src: '/icon-192.png', sizes: '192x192' }]
           }
         ]
       },
